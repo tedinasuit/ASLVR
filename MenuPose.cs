@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuPose : MonoBehaviour
 {
-
-    public void PlayGame()
+    [SerializeField] private string newLevel;
+    private void InBox(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.N))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(newLevel);
+            System.Console.WriteLine("N pressed");
         }
+
+        
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using Oculus.Interaction;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PoseDetector : MonoBehaviour
@@ -13,7 +14,7 @@ public class PoseDetector : MonoBehaviour
     {
         foreach (var item in poses)
         {
-            item.WhenSelected += () => SetTextToPoseName(item.gameObject.name);
+            item.WhenSelected += () => SceneManager.LoadScene(2);
             item.WhenUnselected += () => SetTextToPoseName("");
         }
     }
@@ -21,11 +22,11 @@ public class PoseDetector : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
-        
+
     }
 
     private void SetTextToPoseName(string newText)
     {
         text.text = newText;    
-     }
+    }
 }
