@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PoseDetector : MonoBehaviour
+public class Freestyle : MonoBehaviour
 {
 
     public List<ActiveStateSelector> poses;
@@ -14,8 +14,8 @@ public class PoseDetector : MonoBehaviour
     {
         foreach (var item in poses)
         {
-            item.WhenSelected += () => SceneManager.LoadScene("KeuzeMenu");
-            item.WhenUnselected += () => SetTextToPoseName("");
+            item.WhenSelected += () => SetTextToPoseName(item.gameObject.name);
+            item.WhenUnselected += () => SetTextToPoseName("Maak een gebaar");
         }
     }
 
